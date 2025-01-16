@@ -4,6 +4,12 @@ This project can be used as a starting point to create your own Vaadin applicati
 
 Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl).
 
+### Null-Safety: Kotlin and TypeScript
+
+Kotlin provides strict null-safety by distinguishing between `String` (non-nullable) and `String?` (nullable). TypeScript has a similar system but requires explicit declaration of nullable types, such as `string | null`. When generating TypeScript types with Hilla from Kotlin, nullability information may be lost; for example, `String?` is often represented as `string` instead of `string | null`.
+
+For the moment there are no proper solutions or workarounds and the values needs to be checked the generated types in TypeScript and add hoops manually. 
+
 ## Running the Application
 There are two ways to run the application :  using `mvn spring-boot:run` or by running the `Application` class directly from your IDE.
 
